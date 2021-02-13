@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme name="Default" author_name="Invision Power Services, Inc" author_url="https://www.invisioncommunity.com">
+ <template template_group="main" template_name="mainCategories" template_data="" template_location="front" template_app="changelogrelease"><![CDATA[{{$id = \IPS\Request::i()->id;}}
+{{try { $currentCategory = \IPS\changelogrelease\Categories::load( $id ); } catch( \OutOfRangeException $e ) { $currentCategory = FALSE; } }}
+{{$categories = $currentCategory ? $currentCategory->children() : \IPS\changelogrelease\Categories::roots();}}
+{{$canAdd = \IPS\changelogrelease\Categories::canOnAny('add');}}
+
+{{foreach $categories as $category}}
+{{if $category->can('view') AND $category->hasChildren() AND ( $category->open OR \IPS\Member::loggedIn()->isAdmin() )}}	
+
+<div class="change-container">
+<div class="change-header"><!---->	
+<div class="title">{$category->_title}</div>
+<div class="subtitle is-6">
+{datetime="$category->cat_date"}
+</div></div>
+{{if $category->hasChildren()}}
+<div class="change-content">
+<div class="change-list features">
+{{foreach $category->children() as $subcategory}}
+<ul>			
+<li>
+{template="richText" group="global" app="core" location="global" params="$subcategory->additional, array('ipsType_normal')"}
+</li>
+</ul>
+{{endforeach}}
+{{endif}}			
+</div>
+</div>
+</div>
+{{endif}}
+{{endforeach}}
+	
+]]></template>
+ <css css_location="front" css_app="changelogrelease" css_attributes="" css_path="." css_name="changelog.css">&#13;
+.change-container {&#13;
+    border: 4px solid rgba(74,74,74,.5);&#13;
+    margin-bottom: .5rem;&#13;
+}&#13;
+&#13;
+.change-header {&#13;
+    background-color: rgba(74,74,74,.5);&#13;
+    padding: 1rem;&#13;
+    -webkit-transition: all .2s ease;&#13;
+    -o-transition: all .2s ease;&#13;
+    transition: all .2s ease;&#13;
+}&#13;
+&#13;
+.title {&#13;
+    color: #fff;&#13;
+    font-size: 2rem;&#13;
+    font-weight: 900;&#13;
+    line-height: 1.125;&#13;
+}&#13;
+&#13;
+&#13;
+&#13;
+&#13;
+.subtitle.is-6 {&#13;
+    font-size: 1rem;&#13;
+}&#13;
+.subtitle {&#13;
+    color: #f6eae1;&#13;
+    font-size: 1.25rem;&#13;
+    font-weight: 400;&#13;
+    line-height: 1.25;&#13;
+}&#13;
+.subtitle, .title {&#13;
+    word-break: break-word;&#13;
+}&#13;
+&#13;
+&#13;
+&#13;
+&#13;
+.change-content, .change-list {&#13;
+    position: relative;&#13;
+}&#13;
+&#13;
+.change-content {&#13;
+    padding: 1.5rem;&#13;
+}&#13;
+&#13;
+ul {&#13;
+    list-style: none;&#13;
+}&#13;
+.change-list ul li {&#13;
+    font-size: .8rem;&#13;
+    margin-bottom: 2px;&#13;
+}&#13;
+&#13;
+&#13;
+&#13;
+&#13;
+.tags:last-child {&#13;
+    margin-bottom: -.5rem;&#13;
+}&#13;
+.tags.change-tag {&#13;
+    display: -webkit-inline-box;&#13;
+    display: -ms-inline-flexbox;&#13;
+    display: inline-flex;&#13;
+    margin-right: 1rem;&#13;
+}&#13;
+&#13;
+.tags {&#13;
+    -webkit-box-align: center;&#13;
+    -ms-flex-align: center;&#13;
+    align-items: center;&#13;
+    display: -webkit-box;&#13;
+    display: -ms-flexbox;&#13;
+    display: flex;&#13;
+    -ms-flex-wrap: wrap;&#13;
+    flex-wrap: wrap;&#13;
+    -webkit-box-pack: start;&#13;
+    -ms-flex-pack: start;&#13;
+    justify-content: flex-start;&#13;
+}&#13;
+&#13;
+.tag:not(body) {&#13;
+    -webkit-box-align: center;&#13;
+    -ms-flex-align: center;&#13;
+    align-items: center;&#13;
+    background-color: #131414;&#13;
+    border-radius: 0;&#13;
+    color: #f7ebe1;&#13;
+    display: -webkit-inline-box;&#13;
+    display: -ms-inline-flexbox;&#13;
+    display: inline-flex;&#13;
+    font-size: .75rem;&#13;
+    height: 2em;&#13;
+    -webkit-box-pack: center;&#13;
+    -ms-flex-pack: center;&#13;
+    justify-content: center;&#13;
+    line-height: 1.5;&#13;
+    padding-left: .75em;&#13;
+    padding-right: .75em;&#13;
+    white-space: nowrap;&#13;
+}&#13;
+&#13;
+.tag:not(body).is-primary{&#13;
+    background-color: #cd412b;&#13;
+    color: #fff;&#13;
+}&#13;
+&#13;
+&#13;
+.tag:not(body).is-success {&#13;
+    background-color: #738d45;&#13;
+    color: #fff;&#13;
+}&#13;
+&#13;
+.tag:not(body).is-info {&#13;
+    background-color: #209cee;&#13;
+    color: #fff;&#13;
+}&#13;
+&#13;
+.tag:not(body).is-danger {&#13;
+    background-color: #ff3860;&#13;
+    color: #fff;&#13;
+}&#13;
+.tags .tag {&#13;
+    margin-bottom: .5rem;&#13;
+}&#13;
+&#13;
+.&#13;
+&#13;
+</css>
+</theme>

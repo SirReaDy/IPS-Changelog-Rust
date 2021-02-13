@@ -1,0 +1,21 @@
+{
+    "html": {
+        "added": [
+            "front\/main\/mainCategories"
+        ],
+        "edited": [],
+        "removed": []
+    },
+    "css": {
+        "added": [
+            "front\/changelog.css"
+        ],
+        "edited": [],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "normal": {
+        "added": {
+            "0": "__app_changelogrelease",
+            "1": "menu__changelogrelease_change_categories",
+            "8": "changelogrelease_title",
+            "9": "changelogrelease_cat_parent_id",
+            "10": "changelogrelease_icon",
+            "11": "changelogrelease_cat_date",
+            "12": "module__changelogrelease_change",
+            "13": "frontnavigation_changelogrelease",
+            "14": "menu__changelogrelease_change",
+            "15": "editor__core_Title "
+        },
+        "edited": [],
+        "removed": []
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "core": {
+        "ContentRouter": {
+            "Change": "IPS\\changelogrelease\\extensions\\core\\ContentRouter\\Change"
+        },
+        "EditorLocations": {
+            "titleEditor": "IPS\\changelogrelease\\extensions\\core\\EditorLocations\\titleEditor"
+        },
+        "FrontNavigation": {
+            "change": "IPS\\changelogrelease\\extensions\\core\\FrontNavigation\\change"
+        }
+    }
+}

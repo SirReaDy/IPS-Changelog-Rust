@@ -1,0 +1,32 @@
+<ips:template parameters=""/>
+{{$id = \IPS\Request::i()->id;}}
+{{try { $currentCategory = \IPS\changelogrelease\Categories::load( $id ); } catch( \OutOfRangeException $e ) { $currentCategory = FALSE; } }}
+{{$categories = $currentCategory ? $currentCategory->children() : \IPS\changelogrelease\Categories::roots();}}
+{{$canAdd = \IPS\changelogrelease\Categories::canOnAny('add');}}
+
+{{foreach $categories as $category}}
+{{if $category->can('view') AND $category->hasChildren() AND ( $category->open OR \IPS\Member::loggedIn()->isAdmin() )}}	
+
+<div class="change-container">
+<div class="change-header"><!---->	
+<div class="title">{$category->_title}</div>
+<div class="subtitle is-6">
+{datetime="$category->cat_date"}
+</div></div>
+{{if $category->hasChildren()}}
+<div class="change-content">
+<div class="change-list features">
+{{foreach $category->children() as $subcategory}}
+<ul>			
+<li>
+{template="richText" group="global" app="core" location="global" params="$subcategory->additional, array('ipsType_normal')"}
+</li>
+</ul>
+{{endforeach}}
+{{endif}}			
+</div>
+</div>
+</div>
+{{endif}}
+{{endforeach}}
+	

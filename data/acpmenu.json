@@ -1,0 +1,11 @@
+{
+    "change": {
+        "categories": {
+            "tab": "community",
+            "controller": "categories",
+            "do": "",
+            "restriction": "categories_manage",
+            "subcontrollers": ""
+        }
+    }
+}

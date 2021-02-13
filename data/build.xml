@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build>
+ <module key="admin/change"><![CDATA[{"default_controller":"","protected":0,"default":0}]]></module>
+ <module key="front/change"><![CDATA[{"default_controller":"","protected":false,"default":null}]]></module>
+</build>

@@ -1,0 +1,27 @@
+{
+	"topLevel": "changelogrelease",
+	"pages": {
+	    "changelogrelease_changelogrelease": {
+		    "friendly": "view/{#id}-{?}",
+		    "real": "app=changelogrelease&module=change&controller=view",
+			"verify": "\\IPS\\faq\\Faq"
+		},
+		"changelogrelease_category": {
+		    "friendly": "category/{#id}-{?}",
+		    "real": "app=changelogrelease&module=change&controller=main&do=category",
+			"verify": "\\IPS\\changelogrelease\\Categories"
+		},
+		"changelogrelease_view": {
+		    "friendly": "{#id}-check-answer",
+		    "real": "app=changelogrelease&module=change&controller=main&do=view"
+	    },
+		"changelogrelease_add": {
+		    "friendly": "add",
+		    "real": "app=faq&module=faq&controller=main&do=submit"
+	    },
+	    "changelogrelease_categories": {
+		    "friendly": "",
+		    "real": "app=changelogrelease&module=change&controller=main"
+	    }
+	}
+}

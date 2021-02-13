@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language>
+ <app key="changelogrelease" version="10000">
+  <word key="__app_changelogrelease" js="0">Changelog Releases</word>
+  <word key="menu__changelogrelease_change_categories" js="0">Changelog Settings</word>
+  <word key="menu__changelogrelease_change" js="0">Changelog Releases</word>
+  <word key="changelogrelease_title" js="0">Title</word>
+  <word key="editor__core_Title " js="0">Editor</word>
+  <word key="changelogrelease_cat_parent_id" js="0">Parent</word>
+  <word key="changelogrelease_icon" js="0">Icon</word>
+  <word key="changelogrelease_cat_date" js="0">Date</word>
+  <word key="module__changelogrelease_change" js="0">Releases</word>
+  <word key="frontnavigation_changelogrelease" js="0">Changelog Releases</word>
+ </app>
+</language>
